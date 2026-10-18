@@ -3,47 +3,72 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="第五帖：颱風夜的外送單｜藍星十帖・Cy可樂老師傳，由 模型 05 輔助創作的小說">
-<title>第五帖：颱風夜的外送單｜藍星十帖・Cy可樂老師傳</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+<title>藍星十帖・Cy可樂老師傳｜第五帖：颱風夜的外送單</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#faf7f2;--ink:#2b2b2b;--tea:#8b5a2b}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);
-  font-family:'Noto Serif TC','Songti TC','PMingLiU',serif;line-height:2.0}
-a{color:var(--tea)}
-img{max-width:100%}
-
-.site{border-bottom:1px solid rgba(139,90,43,.25);background:rgba(139,90,43,.06)}
-.site .wrap{max-width:46em;margin:0 auto;padding:.55rem 1rem}
-.site a{color:var(--tea);text-decoration:none;font-weight:700}
-.content{max-width:42em;margin:0 auto;padding:1.4rem 1rem 2.5rem}
-.cover{margin:0 0 1.2rem;text-align:center}
-.cover img{width:100%;border-radius:10px;border:1px solid rgba(139,90,43,.3);
-  box-shadow:0 2px 10px rgba(43,43,43,.08)}
-.kicker{color:var(--tea);letter-spacing:.12em;margin:0 0 .2rem;font-size:.95rem}
-h1{font-size:1.75rem;line-height:1.6;margin:.2rem 0 .4rem;color:var(--ink)}
-.region{color:#6b5a48;margin:.1rem 0 1.6rem;font-size:.98rem}
-article p{margin:0 0 1.55em;text-align:justify}
-.pager{display:flex;justify-content:space-between;gap:1rem;margin-top:2.2rem;
-  border-top:1px dashed rgba(139,90,43,.4);padding-top:1.1rem}
-.pager a{text-decoration:none;font-weight:700}
-.pager .sp{color:rgba(139,90,43,.5)}
-footer{border-top:1px solid rgba(139,90,43,.25);margin-top:2rem;
-  text-align:center;color:#7a6a58;font-size:.88rem;padding:1.2rem 1rem 1.6rem}
-footer .ver{margin:.2rem 0 0;letter-spacing:.08em}
+:root { --paper:#faf7f2; --ink:#2b2b2b; --tea:#8b5a2b; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink);
+  font-family:'Noto Serif TC','PMingLiU',serif; line-height:2.0; }
+a { color:var(--tea); }
+.wrap { max-width:72em; margin:0 auto; padding:0 1.2em; }
+header.site { border-bottom:3px double var(--tea); background:var(--paper); }
+header.site .wrap { display:flex; align-items:center; gap:.8em; padding:.7em 1.2em; flex-wrap:wrap; }
+header.site h1 { font-size:1.15rem; margin:0; letter-spacing:.08em; }
+header.site h1 a { color:var(--ink); text-decoration:none; }
+main.reader { max-width:42em; margin:0 auto; padding:1.5em 1.2em 3em; }
+.kicker { color:var(--tea); letter-spacing:.25em; font-size:.95rem; margin:0 0 .2em; }
+h1.title { font-size:1.7rem; line-height:1.6; margin:.1em 0 .4em; }
+.meta { color:#6b5a48; font-size:.95rem; margin-bottom:1.2em; }
+.badge { display:inline-block; border:1px solid var(--tea); color:var(--tea);
+  border-radius:999px; padding:.05em .8em; font-size:.85rem; margin-left:.4em; }
+figure.cover { margin:0 0 1.8em; text-align:center; }
+figure.cover img { max-width:100%; height:auto; border-radius:6px;
+  box-shadow:0 2px 10px rgba(43,43,43,.15); }
+article p { margin:0 0 1.1em; text-align:justify; }
+nav.pn { display:flex; justify-content:space-between; gap:1em; margin-top:2.5em;
+  border-top:1px solid #d8cbb8; padding-top:1.2em; }
+nav.pn a { text-decoration:none; max-width:46%; line-height:1.7; }
+nav.pn .dir { display:block; font-size:.85rem; color:#6b5a48; }
+footer.site { border-top:3px double var(--tea); margin-top:2em; }
+footer.site .wrap { padding:1.2em; font-size:.88rem; color:#6b5a48; }
+footer .ver { float:right; }
+/* 索引頁 */
+.banner { position:relative; }
+.banner img { width:100%; height:auto; display:block; max-height:22em; object-fit:cover; }
+.banner .btext { position:absolute; inset:0; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; text-align:center;
+  background:linear-gradient(rgba(250,247,242,.55),rgba(250,247,242,.75)); padding:1em; }
+.banner h1 { font-size:2.1rem; margin:0; letter-spacing:.12em; text-shadow:0 1px 0 #fff; }
+.banner p.sub { margin:.3em 0 0; color:#6b5a48; letter-spacing:.3em; }
+section.sec { margin-top:2.2em; }
+section.sec > h2 { border-left:6px solid var(--tea); padding-left:.5em;
+  font-size:1.3rem; margin:0 0 .8em; }
+.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(15em,1fr)); gap:1em; }
+a.card { display:block; text-decoration:none; color:var(--ink); background:#fff;
+  border:1px solid #e2d7c3; border-radius:8px; overflow:hidden;
+  transition:box-shadow .15s, transform .15s; }
+a.card:hover { box-shadow:0 3px 12px rgba(43,43,43,.18); transform:translateY(-2px); }
+a.card .th { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#efe8db; }
+a.card .ph { width:100%; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center;
+  background:#efe8db; color:var(--tea); font-size:2rem; }
+a.card .cb { padding:.6em .8em .8em; line-height:1.7; }
+a.card .no { font-size:.8rem; color:var(--tea); letter-spacing:.2em; }
+a.card h3 { margin:.1em 0 .2em; font-size:1.02rem; line-height:1.6; }
+a.card .rg { font-size:.82rem; color:#6b5a48; }
+.tables { width:100%; border-collapse:collapse; font-size:.9rem; margin:.6em 0 1.4em; }
+.tables th, .tables td { border:1px solid #d8cbb8; padding:.3em .7em; text-align:left; }
+.tables th { background:#f1e9db; }
+.tsec h2 { font-size:1.15rem; border-left:6px solid var(--tea); padding-left:.5em; }
 </style>
 </head>
 <body>
-<header class="site"><div class="wrap"><a href="index.html">← 藍星十帖・Cy可樂老師傳</a></div></header>
-<main class="content">
-<div class="cover"><img class="cover-img" src="images/cover-05.png" alt="第五帖：颱風夜的外送單 封面" loading="lazy"></div>
-<p class="kicker">第五帖　·　AI 語言模型：模型 05</p>
-<h1>第五帖：颱風夜的外送單</h1>
-<p class="region">地域：全島（颱風從北部登陸，風雨貫穿全島）</p>
+<header class="site"><div class="wrap"><h1><a href="index.html">藍星十帖・Cy可樂老師傳</a></h1></div></header>
+<main class="reader">
+<p class="kicker">主線・第5帖</p>
+<h1 class="title">第五帖：颱風夜的外送單</h1>
+<p class="meta">AI 語言模型<span class="badge">模型 05</span><br>地域：全島（颱風從北部登陸，風雨貫穿全島）</p>
+<figure class="cover"><img src="images/cover-05.png" alt="第五帖：颱風夜的外送單 封面圖"></figure>
 <article>
 <p>那天早上 lifeOS 的晨間 cron 比平常早了兩個鐘頭跳出來。</p>
 <p>Cy老師刷牙刷到一半，螢幕暗暗亮著，那行自己手刻的明體字在黑底上一筆一筆浮出來——</p>
@@ -82,11 +107,22 @@ footer .ver{margin:.2rem 0 0;letter-spacing:.08em}
 <p>袋裡最後那幾顆梅子，他留著沒吃完。隔天放學，他把梅子帶到校門口雜貨店，配著玻璃瓶可樂，請那七個孩子一人一顆。</p>
 <p>酸得齜牙。然後大家笑出來。風雨已經過去，太陽出來了，像什麼都沒發生過一樣。</p>
 </article>
-<nav class="pager"><span class="sp"><a href="s04.html">← 第四帖：梅雨、蟲與 Cron</a></span><span class="sp"><a href="s06.html">第六帖：舉重台的緣起 →</a></span></nav>
+<nav class="pn">
+<a id="nav-prev" href="s04.html"><span class="dir">← 上一篇</span>第四帖：梅雨、蟲與 Cron</a>
+<a href="index.html"><span class="dir">■ 總覽</span>回目錄</a>
+<a id="nav-next" href="s06.html"><span class="dir">下一篇 →</span>第六帖：舉重台的緣起</a>
+</nav>
+<script>
+(function(){
+var prev=document.getElementById('nav-prev'),next=document.getElementById('nav-next');
+document.addEventListener('keydown',function(ev){
+if(ev.altKey||ev.ctrlKey||ev.metaKey)return;
+if(ev.key==='ArrowLeft'&&prev){window.location.href=prev.href;}
+else if(ev.key==='ArrowRight'&&next){window.location.href=next.href;}
+});
+})();
+</script>
 </main>
-<footer>
-<p>藍星十帖・Cy可樂老師傳｜本篇由 AI 語言模型（模型 05）輔助創作</p>
-<p class="ver">v20261018.2</p>
-</footer>
-<script>document.addEventListener("keydown",function(e){var t=e.target&&e.target.tagName||"";if(/INPUT|TEXTAREA|SELECT/.test(t))return;if(e.key==="ArrowLeft")location.href="s04.html";if(e.key==="ArrowRight")location.href="s06.html";});</script></body>
+<footer class="site"><div class="wrap"><span class="ver">v20261018.3</span><span>藍星十帖・Cy可樂老師傳　閱讀愉快。</span></div></footer>
+</body>
 </html>

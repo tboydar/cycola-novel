@@ -3,47 +3,72 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="番外14：地板下的聲音｜藍星十帖・Cy可樂老師傳，由 模型 24 輔助創作的小說">
-<title>番外14：地板下的聲音｜藍星十帖・Cy可樂老師傳</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+<title>藍星十帖・Cy可樂老師傳｜番外14：地板下的聲音</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#faf7f2;--ink:#2b2b2b;--tea:#8b5a2b}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);
-  font-family:'Noto Serif TC','Songti TC','PMingLiU',serif;line-height:2.0}
-a{color:var(--tea)}
-img{max-width:100%}
-
-.site{border-bottom:1px solid rgba(139,90,43,.25);background:rgba(139,90,43,.06)}
-.site .wrap{max-width:46em;margin:0 auto;padding:.55rem 1rem}
-.site a{color:var(--tea);text-decoration:none;font-weight:700}
-.content{max-width:42em;margin:0 auto;padding:1.4rem 1rem 2.5rem}
-.cover{margin:0 0 1.2rem;text-align:center}
-.cover img{width:100%;border-radius:10px;border:1px solid rgba(139,90,43,.3);
-  box-shadow:0 2px 10px rgba(43,43,43,.08)}
-.kicker{color:var(--tea);letter-spacing:.12em;margin:0 0 .2rem;font-size:.95rem}
-h1{font-size:1.75rem;line-height:1.6;margin:.2rem 0 .4rem;color:var(--ink)}
-.region{color:#6b5a48;margin:.1rem 0 1.6rem;font-size:.98rem}
-article p{margin:0 0 1.55em;text-align:justify}
-.pager{display:flex;justify-content:space-between;gap:1rem;margin-top:2.2rem;
-  border-top:1px dashed rgba(139,90,43,.4);padding-top:1.1rem}
-.pager a{text-decoration:none;font-weight:700}
-.pager .sp{color:rgba(139,90,43,.5)}
-footer{border-top:1px solid rgba(139,90,43,.25);margin-top:2rem;
-  text-align:center;color:#7a6a58;font-size:.88rem;padding:1.2rem 1rem 1.6rem}
-footer .ver{margin:.2rem 0 0;letter-spacing:.08em}
+:root { --paper:#faf7f2; --ink:#2b2b2b; --tea:#8b5a2b; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink);
+  font-family:'Noto Serif TC','PMingLiU',serif; line-height:2.0; }
+a { color:var(--tea); }
+.wrap { max-width:72em; margin:0 auto; padding:0 1.2em; }
+header.site { border-bottom:3px double var(--tea); background:var(--paper); }
+header.site .wrap { display:flex; align-items:center; gap:.8em; padding:.7em 1.2em; flex-wrap:wrap; }
+header.site h1 { font-size:1.15rem; margin:0; letter-spacing:.08em; }
+header.site h1 a { color:var(--ink); text-decoration:none; }
+main.reader { max-width:42em; margin:0 auto; padding:1.5em 1.2em 3em; }
+.kicker { color:var(--tea); letter-spacing:.25em; font-size:.95rem; margin:0 0 .2em; }
+h1.title { font-size:1.7rem; line-height:1.6; margin:.1em 0 .4em; }
+.meta { color:#6b5a48; font-size:.95rem; margin-bottom:1.2em; }
+.badge { display:inline-block; border:1px solid var(--tea); color:var(--tea);
+  border-radius:999px; padding:.05em .8em; font-size:.85rem; margin-left:.4em; }
+figure.cover { margin:0 0 1.8em; text-align:center; }
+figure.cover img { max-width:100%; height:auto; border-radius:6px;
+  box-shadow:0 2px 10px rgba(43,43,43,.15); }
+article p { margin:0 0 1.1em; text-align:justify; }
+nav.pn { display:flex; justify-content:space-between; gap:1em; margin-top:2.5em;
+  border-top:1px solid #d8cbb8; padding-top:1.2em; }
+nav.pn a { text-decoration:none; max-width:46%; line-height:1.7; }
+nav.pn .dir { display:block; font-size:.85rem; color:#6b5a48; }
+footer.site { border-top:3px double var(--tea); margin-top:2em; }
+footer.site .wrap { padding:1.2em; font-size:.88rem; color:#6b5a48; }
+footer .ver { float:right; }
+/* 索引頁 */
+.banner { position:relative; }
+.banner img { width:100%; height:auto; display:block; max-height:22em; object-fit:cover; }
+.banner .btext { position:absolute; inset:0; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; text-align:center;
+  background:linear-gradient(rgba(250,247,242,.55),rgba(250,247,242,.75)); padding:1em; }
+.banner h1 { font-size:2.1rem; margin:0; letter-spacing:.12em; text-shadow:0 1px 0 #fff; }
+.banner p.sub { margin:.3em 0 0; color:#6b5a48; letter-spacing:.3em; }
+section.sec { margin-top:2.2em; }
+section.sec > h2 { border-left:6px solid var(--tea); padding-left:.5em;
+  font-size:1.3rem; margin:0 0 .8em; }
+.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(15em,1fr)); gap:1em; }
+a.card { display:block; text-decoration:none; color:var(--ink); background:#fff;
+  border:1px solid #e2d7c3; border-radius:8px; overflow:hidden;
+  transition:box-shadow .15s, transform .15s; }
+a.card:hover { box-shadow:0 3px 12px rgba(43,43,43,.18); transform:translateY(-2px); }
+a.card .th { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#efe8db; }
+a.card .ph { width:100%; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center;
+  background:#efe8db; color:var(--tea); font-size:2rem; }
+a.card .cb { padding:.6em .8em .8em; line-height:1.7; }
+a.card .no { font-size:.8rem; color:var(--tea); letter-spacing:.2em; }
+a.card h3 { margin:.1em 0 .2em; font-size:1.02rem; line-height:1.6; }
+a.card .rg { font-size:.82rem; color:#6b5a48; }
+.tables { width:100%; border-collapse:collapse; font-size:.9rem; margin:.6em 0 1.4em; }
+.tables th, .tables td { border:1px solid #d8cbb8; padding:.3em .7em; text-align:left; }
+.tables th { background:#f1e9db; }
+.tsec h2 { font-size:1.15rem; border-left:6px solid var(--tea); padding-left:.5em; }
 </style>
 </head>
 <body>
-<header class="site"><div class="wrap"><a href="index.html">← 藍星十帖・Cy可樂老師傳</a></div></header>
-<main class="content">
-<div class="cover"><img class="cover-img" src="images/cover-o14.png" alt="番外14：地板下的聲音 封面" loading="lazy"></div>
-<p class="kicker">番外14　·　AI 語言模型：模型 24</p>
-<h1>番外14：地板下的聲音</h1>
-
+<header class="site"><div class="wrap"><h1><a href="index.html">藍星十帖・Cy可樂老師傳</a></h1></div></header>
+<main class="reader">
+<p class="kicker">外傳・番外 14</p>
+<h1 class="title">番外14：地板下的聲音</h1>
+<p class="meta">AI 語言模型<span class="badge">模型 24</span></p>
+<figure class="cover"><img src="images/cover-o14.png" alt="地板下的聲音 封面圖"></figure>
 <article>
 <p>阿邦蹲在地板邊，手電筒光束切開半世紀的灰塵。木板縫隙裡塞著發黃的報紙碎屑、幾顆生鏽的螺絲帽，還有一張摺得方正的紙條——字跡工整，像楷書練習本裡撕下來的那頁：「想放棄時，聽獎牌碰撞聲。體操隊全體，民國六十五年冬。」</p>
 <p>五十年了。當年鋪這層地板的木工師傅早過世，體操隊的隊長在三十年前的颱風夜騎機車滑進路邊溝裡沒回來，教練陳老爹去年冬至焙完最後一爐茶、把那台 Mac mini 交給 Cy 老師那天，也跟著走了。只剩阿邦，膝蓋裡那顆磨損的半月板還記得當年空槓十蹲的重量，記得落地瞬間震上脊椎的那種清脆感。</p>
@@ -61,7 +86,7 @@ footer .ver{margin:.2rem 0 0;letter-spacing:.08em}
 <p>最後幾頁字跡變大、筆鋒用力穿破紙背：民國七十五年，體重 70.2，心境重量 0。「教練過世。槓桿還在，人不在了。重量歸零。」</p>
 <p>阿邦指尖摩挲著那行字，喉嚨發緊。他記得那年冬天，陳老爹躺在中部山線茶鄉的老屋床上，手裡攥著半罐玻璃瓶可樂，對著趕回來的幾個老隊員說：「焙茶像帶槓鈴，火候不到不甩手，火候過了也不用強撐。你們現在都是老師了，記得教孩子們——重量在心裡，不在槓上。」</p>
 <p>那句話當時聽不懂，後來阿邦在北部雨城教書二十年、在南部廟埕舊城教十年、又調回霧語山城這間中學，看著一屆屆學生在單槓前猶豫、顫抖、咬牙、落地，才慢慢懂。心境重量不是壓力，是那種明知會痛、明知會摔、仍然雙手抓住冰涼金屬的瞬間——那種「應無所住而生其心」的當下。</p>
-<p>手電筒光圈晃動，照到照片背面鉛筆寫的小字：「**給阿邦：妳會成為最好的老師，因為妳最清楚想放棄是什麼滋味。**」</p>
+<p>手電筒光圈晃動，照到照片背面鉛筆寫的小字：「<strong>給阿邦：妳會成為最好的老師，因為妳最清楚想放棄是什麼滋味。</strong>」</p>
 <p>字跡是隊長寫的。那個騎機車滑進溝裡、三十年前就走的人。</p>
 <p>阿邦鼻子一酸，眼眶發熱。他不是妳，他是他——但隊長向來分不清「妳」跟「他」，說「阿邦這名字聽起來就軟軟的，像阿嬤煮的芋圓」。</p>
 <p>「阿邦老師，妳在幹嘛？」</p>
@@ -90,14 +115,25 @@ footer .ver{margin:.2rem 0 0;letter-spacing:.08em}
 <p>林彥君握著玻璃瓶，指節發白，嘴角卻彎了起來——那是阿邦見過最像當年隊長、也最像自己當年照片裡那個瘦小少年、下巴微揚的笑容。「好喔，老師。妳說了算。」</p>
 <p>阿邦回頭把鐵盒蓋好，放回地板洞裡，一塊塊蓋回木板、擰緊螺絲。最後一塊木板貼合地面時，他聽見了——極輕、極短、極確定的一聲「叮」。</p>
 <p>像銅牌碰到石頭。像汗水滴進溪石縫隙。像五十年前那群少年在冬日午後、霧氣未散的體操館裡，同時揮動右拳、重重砸向掌心、大聲喊出來的那句口號——</p>
-<p>「**重量在心裡，不在槓上。**」</p>
+<p>「<strong>重量在心裡，不在槓上。</strong>」</p>
 <p>他拍拍手上灰塵，轉身走向操場，腳步聲沉穩、有力，每一步都像在聽見某種聲音回響。</p>
 </article>
-<nav class="pager"><span class="sp"><a href="o13.html">← 番外13：閒雲的炊風</a></span><span class="sp"><a href="o15.html">番外15：本車歡迎機器乘客 →</a></span></nav>
+<nav class="pn">
+<a id="nav-prev" href="o13.html"><span class="dir">← 上一篇</span>閒雲的炊風</a>
+<a href="index.html"><span class="dir">■ 總覽</span>回目錄</a>
+<a id="nav-next" href="o15.html"><span class="dir">下一篇 →</span>本車歡迎機器乘客</a>
+</nav>
+<script>
+(function(){
+var prev=document.getElementById('nav-prev'),next=document.getElementById('nav-next');
+document.addEventListener('keydown',function(ev){
+if(ev.altKey||ev.ctrlKey||ev.metaKey)return;
+if(ev.key==='ArrowLeft'&&prev){window.location.href=prev.href;}
+else if(ev.key==='ArrowRight'&&next){window.location.href=next.href;}
+});
+})();
+</script>
 </main>
-<footer>
-<p>藍星十帖・Cy可樂老師傳｜本篇由 AI 語言模型（模型 24）輔助創作</p>
-<p class="ver">v20261018.2</p>
-</footer>
-<script>document.addEventListener("keydown",function(e){var t=e.target&&e.target.tagName||"";if(/INPUT|TEXTAREA|SELECT/.test(t))return;if(e.key==="ArrowLeft")location.href="o13.html";if(e.key==="ArrowRight")location.href="o15.html";});</script></body>
+<footer class="site"><div class="wrap"><span class="ver">v20261018.3</span><span>藍星十帖・Cy可樂老師傳　閱讀愉快。</span></div></footer>
+</body>
 </html>

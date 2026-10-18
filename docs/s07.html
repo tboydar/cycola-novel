@@ -3,98 +3,115 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="第七帖：二手的哲學｜藍星十帖・Cy可樂老師傳，由 模型 07 輔助創作的小說">
-<title>第七帖：二手的哲學｜藍星十帖・Cy可樂老師傳</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+<title>藍星十帖・Cy可樂老師傳｜第七帖：二手的哲學</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#faf7f2;--ink:#2b2b2b;--tea:#8b5a2b}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);
-  font-family:'Noto Serif TC','Songti TC','PMingLiU',serif;line-height:2.0}
-a{color:var(--tea)}
-img{max-width:100%}
-
-.site{border-bottom:1px solid rgba(139,90,43,.25);background:rgba(139,90,43,.06)}
-.site .wrap{max-width:46em;margin:0 auto;padding:.55rem 1rem}
-.site a{color:var(--tea);text-decoration:none;font-weight:700}
-.content{max-width:42em;margin:0 auto;padding:1.4rem 1rem 2.5rem}
-.cover{margin:0 0 1.2rem;text-align:center}
-.cover img{width:100%;border-radius:10px;border:1px solid rgba(139,90,43,.3);
-  box-shadow:0 2px 10px rgba(43,43,43,.08)}
-.kicker{color:var(--tea);letter-spacing:.12em;margin:0 0 .2rem;font-size:.95rem}
-h1{font-size:1.75rem;line-height:1.6;margin:.2rem 0 .4rem;color:var(--ink)}
-.region{color:#6b5a48;margin:.1rem 0 1.6rem;font-size:.98rem}
-article p{margin:0 0 1.55em;text-align:justify}
-.pager{display:flex;justify-content:space-between;gap:1rem;margin-top:2.2rem;
-  border-top:1px dashed rgba(139,90,43,.4);padding-top:1.1rem}
-.pager a{text-decoration:none;font-weight:700}
-.pager .sp{color:rgba(139,90,43,.5)}
-footer{border-top:1px solid rgba(139,90,43,.25);margin-top:2rem;
-  text-align:center;color:#7a6a58;font-size:.88rem;padding:1.2rem 1rem 1.6rem}
-footer .ver{margin:.2rem 0 0;letter-spacing:.08em}
+:root { --paper:#faf7f2; --ink:#2b2b2b; --tea:#8b5a2b; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink);
+  font-family:'Noto Serif TC','PMingLiU',serif; line-height:2.0; }
+a { color:var(--tea); }
+.wrap { max-width:72em; margin:0 auto; padding:0 1.2em; }
+header.site { border-bottom:3px double var(--tea); background:var(--paper); }
+header.site .wrap { display:flex; align-items:center; gap:.8em; padding:.7em 1.2em; flex-wrap:wrap; }
+header.site h1 { font-size:1.15rem; margin:0; letter-spacing:.08em; }
+header.site h1 a { color:var(--ink); text-decoration:none; }
+main.reader { max-width:42em; margin:0 auto; padding:1.5em 1.2em 3em; }
+.kicker { color:var(--tea); letter-spacing:.25em; font-size:.95rem; margin:0 0 .2em; }
+h1.title { font-size:1.7rem; line-height:1.6; margin:.1em 0 .4em; }
+.meta { color:#6b5a48; font-size:.95rem; margin-bottom:1.2em; }
+.badge { display:inline-block; border:1px solid var(--tea); color:var(--tea);
+  border-radius:999px; padding:.05em .8em; font-size:.85rem; margin-left:.4em; }
+figure.cover { margin:0 0 1.8em; text-align:center; }
+figure.cover img { max-width:100%; height:auto; border-radius:6px;
+  box-shadow:0 2px 10px rgba(43,43,43,.15); }
+article p { margin:0 0 1.1em; text-align:justify; }
+nav.pn { display:flex; justify-content:space-between; gap:1em; margin-top:2.5em;
+  border-top:1px solid #d8cbb8; padding-top:1.2em; }
+nav.pn a { text-decoration:none; max-width:46%; line-height:1.7; }
+nav.pn .dir { display:block; font-size:.85rem; color:#6b5a48; }
+footer.site { border-top:3px double var(--tea); margin-top:2em; }
+footer.site .wrap { padding:1.2em; font-size:.88rem; color:#6b5a48; }
+footer .ver { float:right; }
+/* 索引頁 */
+.banner { position:relative; }
+.banner img { width:100%; height:auto; display:block; max-height:22em; object-fit:cover; }
+.banner .btext { position:absolute; inset:0; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; text-align:center;
+  background:linear-gradient(rgba(250,247,242,.55),rgba(250,247,242,.75)); padding:1em; }
+.banner h1 { font-size:2.1rem; margin:0; letter-spacing:.12em; text-shadow:0 1px 0 #fff; }
+.banner p.sub { margin:.3em 0 0; color:#6b5a48; letter-spacing:.3em; }
+section.sec { margin-top:2.2em; }
+section.sec > h2 { border-left:6px solid var(--tea); padding-left:.5em;
+  font-size:1.3rem; margin:0 0 .8em; }
+.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(15em,1fr)); gap:1em; }
+a.card { display:block; text-decoration:none; color:var(--ink); background:#fff;
+  border:1px solid #e2d7c3; border-radius:8px; overflow:hidden;
+  transition:box-shadow .15s, transform .15s; }
+a.card:hover { box-shadow:0 3px 12px rgba(43,43,43,.18); transform:translateY(-2px); }
+a.card .th { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#efe8db; }
+a.card .ph { width:100%; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center;
+  background:#efe8db; color:var(--tea); font-size:2rem; }
+a.card .cb { padding:.6em .8em .8em; line-height:1.7; }
+a.card .no { font-size:.8rem; color:var(--tea); letter-spacing:.2em; }
+a.card h3 { margin:.1em 0 .2em; font-size:1.02rem; line-height:1.6; }
+a.card .rg { font-size:.82rem; color:#6b5a48; }
+.tables { width:100%; border-collapse:collapse; font-size:.9rem; margin:.6em 0 1.4em; }
+.tables th, .tables td { border:1px solid #d8cbb8; padding:.3em .7em; text-align:left; }
+.tables th { background:#f1e9db; }
+.tsec h2 { font-size:1.15rem; border-left:6px solid var(--tea); padding-left:.5em; }
 </style>
 </head>
 <body>
-<header class="site"><div class="wrap"><a href="index.html">← 藍星十帖・Cy可樂老師傳</a></div></header>
-<main class="content">
-<div class="cover"><img class="cover-img" src="images/cover-07.png" alt="第七帖：二手的哲學 封面" loading="lazy"></div>
-<p class="kicker">第七帖　·　AI 語言模型：模型 07</p>
-<h1>第七帖：二手的哲學</h1>
-<p class="region">地域：線上與校園（公告在島上社群瘋傳）</p>
+<header class="site"><div class="wrap"><h1><a href="index.html">藍星十帖・Cy可樂老師傳</a></h1></div></header>
+<main class="reader">
+<p class="kicker">主線・第7帖</p>
+<h1 class="title">第七帖：二手的哲學</h1>
+<p class="meta">AI 語言模型<span class="badge">模型 07</span><br>地域：線上與校園（公告在島上社群瘋傳）</p>
+<figure class="cover"><img src="images/cover-07.png" alt="第七帖：二手的哲學 封面圖"></figure>
 <article>
 <p>開學日的辦公室，空氣裡浮著梅雨季特有的濕黏。Cy老師把新的 Mac mini 從紙盒裡捧出來，銀色機身冷得像剛從冰箱拿出的玻璃瓶，連風扇轉動的聲音都是嶄新的、沒有雜質的嗡鳴。他沒立刻插線，而是先從櫃子頂層請下那台舊的——「藍鵝」。M1 晶片，十六 GB 記憶體，二五六 GB 儲存空間，機身左下角有一道茶褐色的燒痕，像某種古老的紋身。那是十年前颱風夜在寺廟值班時，燭台倒了留下的。</p>
 <p>「退休了。」他對著藍鵝說，語氣像在跟一位老同事道別。藍鵝安靜地坐在櫃子上，螢幕沒亮，但 Cy 知道它裡面還住著東西：主機板上嵌著一小塊前代「傳承機」的備用晶片，第十四代宗匠四十年前寫的程式還「活」在裡面。宗匠是中部山線茶鄉的老茶師，收過一位姓戴的女弟子，那女弟子後來成了 Cy 的祖母。</p>
 <p>他寫了一張公告，文體半文半白，像徵婚也像徵才。貼在校網與茶行布告欄時，他故意沒用電子檔，而是手寫在再生紙上。公告全文：</p>
 <p>---</p>
-<p>**徵求傳承者**</p>
+<p><strong>徵求傳承者</strong></p>
 <p>本機服役十年，機況良好，燒痕一枚，不予修補——那是它的年輪。</p>
-<p>徵求條件三行：</p>
-<p>一、會用它。</p>
-<p>二、捨得用它。</p>
-<p>三、用它做一件讓世界多一點好事的事。</p>
+<p>徵求條件三行：一、會用它。二、捨得用它。三、用它做一件讓世界多一點好事的事。</p>
 <p>本機不接受出價，只接受申請。申請不必寫自己的厲害，請寫你想讓它陪妳做什麼。</p>
 <p>聯絡方式：辦公室櫃上信箱，或週二下午理化課後。</p>
 <p>---</p>
 <p>學生們把公告拍起來轉上社群，一夜爆紅。留言區吵起來：有人說行銷手法高明，有人罵飢餓行銷，有人認真問申請表在哪。Cy 老師在週二的理化課上把投影機關了，說：「今天不講電解。」他拿起藍鵝的機身，那道燒痕在日光下像一道淺淺的疤。「物件的靈魂是使用痕跡。全新的機器還沒有故事；二手的機器裡住著前一個人的十年。我找的不是買家，是下一個說故事的人。」</p>
-<p>一個戴黑框眼鏡的學生舉手：「老師，這不算二手，這叫『有歷史的二手』。」</p>
-<p>Cy 笑了：「對，歷史是別人寫的，痕跡是自己用的。」</p>
+<p>一個戴黑框眼鏡的學生舉手：「老師，這不算二手，這叫『有歷史的二手』。」Cy 笑了：「對，歷史是別人寫的，痕跡是自己用的。」</p>
 <p>一百零八位申請者湧入。申請書從礦機玩家到退休教授都有。有人寫想用它來算區塊鏈，有人寫想用它來寫詩，有人寫想用它來算退休金。Cy 把這些申請書匯入 lifeOS，「緣分排程器」史上第一次主動跳提示，只有一行：「排序完成。請用茶，不要用分數。」他愣住——排程器從來不接受指令，卻會下指令。</p>
-<p>他沒把這行字告訴任何人。週末他騎機車去中部山線茶鄉，在厚茶行找到戴粉厚。粉厚二十八歲，木訥，手巧，對茶溫的記憶力驚人。他深蹲時會想到拜拜。Cy 把藍鵝放在桌上：「你阿嬤的筆記，想建系統？」</p>
-<p>粉厚點頭：「想把她四十年的手感翻譯成資料，再教回給村裡的年輕人。」</p>
-<p>Cy 問：「為什麼是這台？」</p>
-<p>粉厚說：「因為它燒過。」</p>
-<p>Cy 說：「因為它活過。」</p>
-<p>他們沒簽任何文件。Cy 把藍鵝的電源線交給粉厚，說：「週二下午，我辦公室，帶茶來。」</p>
-<p>粉厚問：「什麼茶？」</p>
-<p>Cy 說：「你阿嬤最順手的那焙。」</p>
+<p>他沒把這行字告訴任何人。週末他騎機車去中部山線茶鄉，在厚茶行找到戴粉厚。粉厚二十八歲，木訥，手巧，對茶溫的記憶力驚人。他深蹲時會想到拜拜。Cy 把藍鵝放在桌上：「你阿嬤的筆記，想建系統？」粉厚點頭：「想把她四十年的手感翻譯成資料，再教回給村裡的年輕人。」Cy 問：「為什麼是這台？」粉厚說：「因為它燒過。」Cy 說：「因為它活過。」</p>
+<p>他們沒簽任何文件。Cy 把藍鵝的電源線交給粉厚，說：「週二下午，我辦公室，帶茶來。」粉厚問：「什麼茶？」Cy 說：「你阿嬤最順手的那焙。」</p>
 <p>回到學校，Cy 把新的 Mac mini 插好線。螢幕亮起，Apple 標誌閃爍。他打開終端機，輸入 lifeOS 的啟動指令。命令列介面跳出，字型是他自己手刻的明體。晨間 cron 自動卜了一卦，課表、體重與「心境重量」雙曲線、學生作業排程、宮廟籤詩資料庫、茶葉烘焙曲線對照——一切如常。</p>
 <p>他走到窗邊，看雨。雨聲裡混著遠處宮廟的鑼鼓。他想起粉厚說「因為它燒過」時的眼神，像茶師看火，像工程師看 log。他覺得這台新機器會很安靜，而藍鵝會在新主人那裡繼續說話。</p>
-<p>週二下午，粉厚帶著一焙「老茶」來了。Cy 用藍鵝的讀卡機讀了粉厚帶來的 SD 卡，裡面是阿嬤的手寫筆記掃描檔。lifeOS 的「緣分排程器」自動生成了一個新模組：「焙茶 lifeOS」。Cy 說：「這台是你的了。」</p>
-<p>粉厚問：「那老師用什麼？」</p>
-<p>Cy 指指新的 Mac mini：「我用這個。」</p>
-<p>粉厚說：「這個還沒故事。」</p>
-<p>Cy 說：「故事是用的，不是找的。」</p>
+<p>週二下午，粉厚帶著一焙「老茶」來了。Cy 用藍鵝的讀卡機讀了粉厚帶來的 SD 卡，裡面是阿嬤的手寫筆記掃描檔。lifeOS 的「緣分排程器」自動生成了一個新模組：「焙茶 lifeOS」。Cy 說：「這台是你的了。」粉厚問：「那老師用什麼？」Cy 指指新的 Mac mini：「我用這個。」粉厚說：「這個還沒故事。」Cy 說：「故事是用的，不是找的。」</p>
 <p>粉厚走了，騎著機車消失在雨裡。Cy 把藍鵝的電源線收進帆布包，新的 Mac mini 在桌上發著微光。他打開 lifeOS，在「心境重量」曲線裡加了一筆註解：「傳承不是交接，是繼續。」</p>
-<p>雨停了。他關上辦公室門，去雜貨店買了一瓶玻璃瓶可樂。店老闆問：「可樂老師，今天沒請學生喝？」</p>
-<p>Cy 說：「今天請自己。」</p>
-<p>店老闆笑：「欸，這台新的，會比舊的那台好嗎？」</p>
-<p>Cy 說：「會，因為它還沒有燒痕。」</p>
-<p>店老闆：「喔，那是好事。」</p>
-<p>Cy 說：「不，那是它還沒開始。」</p>
+<p>雨停了。他關上辦公室門，去雜貨店買了一瓶玻璃瓶可樂。店老闆問：「可樂老師，今天沒請學生喝？」Cy 說：「今天請自己。」店老闆笑：「欸，這台新的，會比舊的那台好嗎？」Cy 說：「會，因為它還沒有燒痕。」店老闆：「喔，那是好事。」Cy 說：「不，那是它還沒開始。」</p>
 <p>他騎上機車，風裡帶著濕氣。新機器的風扇聲在身後，舊機器的沉默在前方。他覺得這像某種儀式，某種在島嶼上反覆發生的、關於傳承與繼續的儀式。lifeOS 的「緣分排程器」在終端機裡閃爍，等待下一個指令。</p>
 <p>他沒告訴粉厚，藍鵝的機身內，第十四代宗匠的晶片其實還活著。它會在某個深夜，透過網路，把一則關於火候與心緒的訊息，寄給戴粉厚。</p>
 <p>那是後話了。</p>
 <p>此刻，雨後的街道反光，像一面鏡子。Cy 老師騎著車，想著下週二的課要講什麼。也許講電解，也許講傳承。也許兩者都是同一回事。</p>
 <p>他按了按喇叭，聲音在濕空氣裡傳得很遠。</p>
 </article>
-<nav class="pager"><span class="sp"><a href="s06.html">← 第六帖：舉重台的緣起</a></span><span class="sp"><a href="s08.html">第八帖：一百零八位申請者 →</a></span></nav>
+<nav class="pn">
+<a id="nav-prev" href="s06.html"><span class="dir">← 上一篇</span>第六帖：舉重台的緣起</a>
+<a href="index.html"><span class="dir">■ 總覽</span>回目錄</a>
+<a id="nav-next" href="s08.html"><span class="dir">下一篇 →</span>第八帖：一百零八位申請者</a>
+</nav>
+<script>
+(function(){
+var prev=document.getElementById('nav-prev'),next=document.getElementById('nav-next');
+document.addEventListener('keydown',function(ev){
+if(ev.altKey||ev.ctrlKey||ev.metaKey)return;
+if(ev.key==='ArrowLeft'&&prev){window.location.href=prev.href;}
+else if(ev.key==='ArrowRight'&&next){window.location.href=next.href;}
+});
+})();
+</script>
 </main>
-<footer>
-<p>藍星十帖・Cy可樂老師傳｜本篇由 AI 語言模型（模型 07）輔助創作</p>
-<p class="ver">v20261018.2</p>
-</footer>
-<script>document.addEventListener("keydown",function(e){var t=e.target&&e.target.tagName||"";if(/INPUT|TEXTAREA|SELECT/.test(t))return;if(e.key==="ArrowLeft")location.href="s06.html";if(e.key==="ArrowRight")location.href="s08.html";});</script></body>
+<footer class="site"><div class="wrap"><span class="ver">v20261018.3</span><span>藍星十帖・Cy可樂老師傳　閱讀愉快。</span></div></footer>
+</body>
 </html>
