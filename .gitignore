@@ -1,0 +1,11 @@
+logs/
+logs-o/
+*.tmp
+*.err
+.DS_Store
+.env
+scripts/
+藍星十帖/外傳任務.md
+藍星十帖/reviews/
+docs/images-test.png
+stories-cache/
