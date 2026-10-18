@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>藍星十帖・3D 世界</title>
+<meta name="description" content="《藍星十帖》十個可探索的立體場景，每一帖都藏著幾段記憶，點亮它們，把故事走完。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#faf7f2; --ink:#2b2b2b; --tea:#8b5a2b;
+  --panel:rgba(24,26,29,.72); --panel-line:rgba(232,220,200,.18);
+  --accent:#9fd7ff;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:#0d1013; color:var(--paper);
+  font-family:'Noto Serif TC','PMingLiU',serif;
+  overflow:hidden; -webkit-font-smoothing:antialiased;
+}
+canvas#scene{position:fixed; inset:0; width:100%; height:100%; display:block; touch-action:none; cursor:grab}
+canvas#scene:active{cursor:grabbing}
+/* 暗角與頂部漸層：讓畫面聚焦，也讓 HUD 文字好讀 */
+#vignette{
+  position:fixed; inset:0; z-index:5; pointer-events:none;
+  background:
+    radial-gradient(ellipse 78% 72% at 56% 46%, rgba(0,0,0,0) 40%, rgba(0,0,0,.38) 78%, rgba(0,0,0,.68) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,0) 26%);
+}
+
+/* ---------- 左側帖列 ---------- */
+#rail{
+  position:fixed; left:0; top:0; bottom:0; width:208px; z-index:20;
+  background:linear-gradient(180deg,rgba(16,18,21,.86),rgba(16,18,21,.62));
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border-right:1px solid var(--panel-line);
+  display:flex; flex-direction:column; padding:16px 0 10px;
+}
+#rail .brand{padding:0 18px 14px; border-bottom:1px solid var(--panel-line)}
+#rail .brand h1{font-size:.98rem; margin:0; letter-spacing:.14em; font-weight:600}
+#rail .brand p{margin:.35em 0 0; font-size:.72rem; letter-spacing:.18em; color:#b8a992}
+#rail ol{list-style:none; margin:8px 0 0; padding:0; overflow-y:auto; flex:1; scrollbar-width:thin}
+#rail li{display:block}
+#rail button.w{
+  all:unset; display:block; width:100%; cursor:pointer; padding:9px 18px 9px 16px;
+  border-left:3px solid transparent; transition:background .15s,border-color .15s;
+}
+#rail button.w:hover{background:rgba(255,255,255,.05)}
+#rail button.w[aria-current="true"]{background:rgba(255,255,255,.08); border-left-color:var(--accent)}
+#rail .w .no{font-size:.68rem; letter-spacing:.2em; color:#a8987f; display:block}
+#rail .w .tt{font-size:.86rem; line-height:1.5; display:block; margin-top:1px}
+#rail .w .dots{display:flex; gap:3px; margin-top:5px}
+#rail .w .dots i{width:5px; height:5px; border-radius:50%; background:rgba(255,255,255,.18); display:block}
+#rail .w .dots i.on{background:var(--accent); box-shadow:0 0 6px var(--accent)}
+#rail .foot{padding:10px 18px 4px; font-size:.68rem; letter-spacing:.12em; color:#8d8272; border-top:1px solid var(--panel-line)}
+#rail .foot a{color:#c9b48a; text-decoration:none}
+#rail .foot a:hover{text-decoration:underline}
+#rail .foot .ver{float:right; color:#6f675b; letter-spacing:.06em}
+
+/* ---------- HUD ---------- */
+#hud{
+  position:fixed; left:232px; right:22px; top:18px; z-index:15;
+  display:flex; align-items:flex-start; justify-content:space-between; gap:18px;
+  pointer-events:none;
+}
+#hud .title{pointer-events:none; text-shadow:0 1px 12px rgba(0,0,0,.85)}
+#hud .kicker{font-size:.72rem; letter-spacing:.3em; color:var(--accent); margin:0}
+#hud h2{margin:.15em 0 .1em; font-size:1.5rem; letter-spacing:.05em; font-weight:600}
+#hud .place{margin:0; font-size:.8rem; color:#c3b7a4; letter-spacing:.08em}
+#hud .tools{display:flex; align-items:center; gap:8px; pointer-events:auto; flex-wrap:wrap; justify-content:flex-end}
+.pill{
+  background:var(--panel); border:1px solid var(--panel-line); border-radius:999px;
+  padding:7px 13px; font-size:.76rem; letter-spacing:.1em; color:#e8dfd0;
+  backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+  display:flex; align-items:center; gap:8px; white-space:nowrap;
+}
+.pill .dots{display:flex; gap:4px}
+.pill .dots i{width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.22); display:block; transition:background .2s,box-shadow .2s}
+.pill .dots i.on{background:var(--accent); box-shadow:0 0 7px var(--accent)}
+button.tool{
+  all:unset; cursor:pointer; background:var(--panel); border:1px solid var(--panel-line);
+  border-radius:999px; padding:7px 14px; font-size:.76rem; letter-spacing:.1em; color:#e8dfd0;
+  backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); transition:background .15s,color .15s;
+  white-space:nowrap;
+}
+button.tool:hover{background:rgba(255,255,255,.14)}
+button.tool:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+
+/* ---------- 提示條 ---------- */
+#tip{
+  position:fixed; left:50%; bottom:18px; transform:translateX(-50%); z-index:12;
+  font-size:.72rem; letter-spacing:.16em; color:rgba(250,247,242,.55);
+  background:rgba(12,14,17,.4); padding:6px 14px; border-radius:999px;
+  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); pointer-events:none;
+  transition:opacity .5s;
+}
+
+/* ---------- 記憶卡 ---------- */
+#card{
+  position:fixed; right:22px; bottom:22px; width:min(400px,calc(100vw - 44px)); z-index:30;
+  background:linear-gradient(160deg,rgba(250,247,242,.97),rgba(242,235,224,.97));
+  color:var(--ink); border-radius:10px; padding:20px 22px 18px;
+  box-shadow:0 18px 50px rgba(0,0,0,.45), 0 0 0 1px rgba(139,90,43,.18);
+  transform:translateY(14px); opacity:0; visibility:hidden;
+  transition:transform .28s cubic-bezier(.2,.8,.3,1),opacity .28s,visibility .28s;
+}
+#card.open{transform:none; opacity:1; visibility:visible}
+#card .eyebrow{font-size:.7rem; letter-spacing:.28em; color:var(--tea); margin:0 0 .4em}
+#card h3{margin:0 0 .55em; font-size:1.16rem; letter-spacing:.04em; line-height:1.5}
+#card blockquote{margin:0 0 .8em; padding-left:.9em; border-left:3px solid #d8cbb8; font-size:.92rem; line-height:1.95; color:#3a342c}
+#card .note{margin:0; font-size:.84rem; line-height:1.85; color:#6b5a48}
+#card .close{
+  all:unset; cursor:pointer; position:absolute; top:10px; right:12px;
+  width:28px; height:28px; border-radius:50%; text-align:center; line-height:28px;
+  color:#8b8378; font-size:1rem;
+}
+#card .close:hover{background:rgba(43,43,43,.07)}
+#card .acts{display:flex; gap:8px; margin-top:14px; align-items:center}
+#card .acts a{
+  font-size:.78rem; color:var(--tea); text-decoration:none; border-bottom:1px solid rgba(139,90,43,.35);
+  padding-bottom:1px;
+}
+#card .acts a:hover{border-bottom-color:var(--tea)}
+#card .acts .spacer{flex:1}
+#card .acts .go{
+  all:unset; cursor:pointer; font-size:.78rem; letter-spacing:.1em;
+  background:var(--tea); color:#fdf9f2; border-radius:999px; padding:7px 15px;
+}
+#card .acts .go:hover{background:#734a22}
+
+/* ---------- 圓滿 ---------- */
+#done{
+  position:fixed; inset:0; z-index:40; display:none; place-items:center;
+  background:radial-gradient(circle at 50% 45%,rgba(20,22,26,.72),rgba(8,9,11,.92));
+  backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px);
+}
+#done.open{display:grid}
+#done .box{
+  width:min(480px,calc(100vw - 44px)); text-align:center; padding:34px 30px 30px;
+  background:linear-gradient(160deg,rgba(250,247,242,.98),rgba(240,232,220,.98));
+  color:var(--ink); border-radius:12px; box-shadow:0 24px 70px rgba(0,0,0,.6);
+  animation:rise .5s cubic-bezier(.2,.8,.3,1);
+}
+@keyframes rise{from{transform:translateY(18px);opacity:0}to{transform:none;opacity:1}}
+#done .seal{
+  width:56px; height:56px; margin:0 auto 14px; border-radius:50%;
+  border:1px solid rgba(139,90,43,.45); color:var(--tea);
+  display:grid; place-items:center; font-size:1.35rem; letter-spacing:0;
+}
+#done .k{font-size:.72rem; letter-spacing:.32em; color:var(--tea); margin:0}
+#done h3{margin:.5em 0 .7em; font-size:1.3rem}
+#done p{margin:0 0 .5em; font-size:.93rem; line-height:1.95; color:#3a342c}
+#done .acts{display:flex; gap:10px; justify-content:center; margin-top:20px; flex-wrap:wrap}
+#done .acts a,#done .acts button{
+  all:unset; cursor:pointer; font-size:.8rem; letter-spacing:.1em; padding:9px 18px; border-radius:999px;
+}
+#done .acts .primary{background:var(--tea); color:#fdf9f2}
+#done .acts .primary:hover{background:#734a22}
+#done .acts .ghost{border:1px solid rgba(139,90,43,.4); color:var(--tea)}
+#done .acts .ghost:hover{background:rgba(139,90,43,.08)}
+
+/* ---------- 錯誤 ---------- */
+#fatal{
+  position:fixed; inset:0; z-index:60; display:none; place-items:center; padding:24px;
+  background:#0d1013; color:#e8dfd0; text-align:center; line-height:1.9; font-size:.95rem;
+}
+#fatal.open{display:grid}
+
+/* ---------- 手機 ---------- */
+@media (max-width:860px){
+  #rail{
+    left:0; right:0; top:auto; bottom:0; width:auto; height:auto; max-height:104px;
+    border-right:0; border-top:1px solid var(--panel-line); padding:8px 0 6px;
+  }
+  #rail .brand,#rail .foot{display:none}
+  #rail ol{display:flex; overflow-x:auto; overflow-y:hidden; margin:0; padding:0 6px; gap:4px; scrollbar-width:none}
+  #rail ol::-webkit-scrollbar{display:none}
+  #rail li{flex:0 0 auto}
+  #rail button.w{padding:7px 12px; border-left:0; border-bottom:2px solid transparent; border-radius:8px; white-space:nowrap}
+  #rail button.w[aria-current="true"]{border-bottom-color:var(--accent); background:rgba(255,255,255,.08)}
+  #rail .w .tt{font-size:.78rem}
+  #rail .w .dots{margin-top:3px}
+  #hud{left:16px; right:16px; top:14px; flex-direction:column; gap:10px}
+  #hud h2{font-size:1.18rem}
+  #hud .tools{justify-content:flex-start}
+  #card{right:12px; left:12px; bottom:116px; width:auto; padding:18px 18px 16px}
+  #tip{bottom:118px; font-size:.66rem; letter-spacing:.1em}
+  #done .box{padding:28px 22px 24px}
+}
+@media (prefers-reduced-motion:reduce){
+  #card,#done .box{transition:none; animation:none}
+}
+</style>
+</head>
+<body>
+
+<canvas id="scene" aria-label="3D 故事世界"></canvas>
+<div id="vignette" aria-hidden="true"></div>
+
+<aside id="rail" aria-label="十帖列表">
+  <div class="brand">
+    <h1>藍星十帖・3D 世界</h1>
+    <p>十帖・四十段記憶</p>
+  </div>
+  <ol id="worldList"></ol>
+  <div class="foot">
+    <a href="../index.html">← 回閱讀</a>
+  </div>
+</aside>
+
+<header id="hud">
+  <div class="title">
+    <p class="kicker" id="hudNo">第 1 帖</p>
+    <h2 id="hudTitle">開機聲與木魚聲</h2>
+    <p class="place" id="hudPlace">北部雨城・車庫健身房</p>
+  </div>
+  <div class="tools">
+    <div class="pill" title="已點亮的記憶"><span class="dots" id="hudDots"></span><span id="hudCount">0 / 4</span></div>
+    <button class="tool" id="hintBtn" title="提示（H）">提示</button>
+    <button class="tool" id="resetBtn" title="重設視角（R）">重設視角</button>
+    <button class="tool" id="autoBtn" title="自動環繞（空白鍵）">自動環繞：開</button>
+  </div>
+</header>
+
+<div id="tip">拖曳環繞・滾輪縮放・點擊發光的記憶</div>
+
+<article id="card" aria-live="polite">
+  <button class="close" id="cardClose" aria-label="關閉">✕</button>
+  <p class="eyebrow" id="cardEyebrow">記憶 1 / 4</p>
+  <h3 id="cardTitle"></h3>
+  <blockquote id="cardQuote"></blockquote>
+  <p class="note" id="cardNote"></p>
+  <div class="acts">
+    <a id="cardStory" href="#">讀這一帖 →</a>
+    <span class="spacer"></span>
+    <button class="go" id="cardNext">下一段記憶</button>
+  </div>
+</article>
+
+<div id="done">
+  <div class="box">
+    <div class="seal" id="doneSeal">帖</div>
+    <p class="k" id="doneKicker">此帖圓滿</p>
+    <h3 id="doneTitle"></h3>
+    <p id="doneText"></p>
+    <div class="acts">
+      <button class="primary" id="doneNext">下一帖</button>
+      <a class="ghost" id="doneStory" href="#">讀原文</a>
+      <button class="ghost" id="doneClose">留在這裡</button>
+    </div>
+  </div>
+</div>
+
+<div id="fatal">
+  <div>
+    <p>這個裝置目前無法啟動 3D 場景。</p>
+    <p>請改用支援 WebGL 的瀏覽器，或回到 <a style="color:#c9b48a" href="../index.html">文字閱讀</a>。</p>
+  </div>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
