@@ -78,15 +78,21 @@
       "type": "file"
     },
     {
+      "path": "README.md",
+      "accessCount": 4,
+      "lastAccessed": 1792346690791,
+      "type": "file"
+    },
+    {
       "path": "scripts/gen-images.sh",
       "accessCount": 3,
       "lastAccessed": 1792328250819,
       "type": "file"
     },
     {
-      "path": "README.md",
+      "path": "WORKLOG.md",
       "accessCount": 3,
-      "lastAccessed": 1792333407264,
+      "lastAccessed": 1792346734451,
       "type": "file"
     },
     {
@@ -147,6 +153,12 @@
       "path": "藍星十帖/00-世界觀與寫作規範.md",
       "accessCount": 1,
       "lastAccessed": 1792333360124,
+      "type": "file"
+    },
+    {
+      "path": "REPORT.md",
+      "accessCount": 1,
+      "lastAccessed": 1792346690128,
       "type": "file"
     }
   ],
