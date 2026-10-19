@@ -9,3 +9,7 @@ scripts/
 藍星十帖/reviews/
 docs/images-test.png
 stories-cache/
+
+# 營運/工作目錄（不進公開 repo）
+.omc/
+*.omc
