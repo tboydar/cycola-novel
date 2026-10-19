@@ -12,4 +12,4 @@
 閱讀：https://tboydar.github.io/cycola-novel/
 3D 世界：https://tboydar.github.io/cycola-novel/worlds/
 
-版本 v20261019.2　|　[工作日誌](WORKLOG.md)　|　[結案報告](REPORT.md)
+版本 v20261019.3　|　[工作日誌](WORKLOG.md)　|　[結案報告](REPORT.md)
