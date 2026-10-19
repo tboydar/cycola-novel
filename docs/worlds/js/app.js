@@ -117,7 +117,7 @@ function refreshRail() {
     foot.append(back, document.createTextNode(`　・　${got} / ${total} 段記憶`));
     const ver = document.createElement('span');
     ver.className = 'ver';
-    ver.textContent = 'v20261019.2';
+    ver.textContent = 'v20261019.3';
     foot.append(ver);
   }
 }
